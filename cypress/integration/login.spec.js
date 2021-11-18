@@ -21,15 +21,14 @@ describe('Twitter clone - Login',()=>{
             fixture: 'download'
         }).as('cloudinary');
 
-    
+        cy.login()
+
         cy.visit('https://twitter-clone-example.herokuapp.com');
 
-        cy.get('input[type=email').type('raulc27@gmail.com')
-        cy.get('input[type=password').type('123')
-        cy.get('button[type=submit').click()
 
         cy.get('nav ul li')
             .should('be.visible')
             .and('have.length', 6)
     });
+
 });
